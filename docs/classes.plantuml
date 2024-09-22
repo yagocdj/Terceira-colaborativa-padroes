@@ -1,5 +1,25 @@
 @startuml classes
 
-' TODO - criar o diagrama de classes
+class Elevador {
+    - andarAtual : int
+}
+
+class Botao {
+    - valor : String
+    - acao : Acao
+
+    + Botao(valor : String, acao : Acao)
+    + getValor() : String
+    + getAcao() : Acao
+}
+
+enum Acao {
+    SUBIR
+    DESCER
+    FECHAR_PORTA
+    ABRIR_PORTA
+}
+
+' TODO - criar classes para os botões de andar ou ENUM para os andares?
 
 @enduml

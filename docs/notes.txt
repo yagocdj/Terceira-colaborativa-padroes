@@ -1,0 +1,6 @@
+# Notas sobre a atividade
+
+Possíveis padrões para essa atividade:
+    - State: o elevador está subindo, descendo ou parado?
+    - Command: cada botão pressionado dispara um determinado comando.
+    - Sigleton: apenas um único elevador será controlado pelo software.

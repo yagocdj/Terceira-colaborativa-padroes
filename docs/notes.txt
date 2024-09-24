@@ -4,3 +4,7 @@ Possíveis padrões para essa atividade:
     - State: o elevador está subindo, descendo ou parado?
     - Command: cada botão pressionado dispara um determinado comando.
     - Sigleton: apenas um único elevador será controlado pelo software.
+
+Possível adição: uma classe "painel"
+    - o painel teria um conjunto de botões
+    - um botão "fechar porta", um "abrir porta"e n botões "selecionar andar"

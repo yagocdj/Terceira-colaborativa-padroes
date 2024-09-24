@@ -8,5 +8,8 @@ public class MainApp {
         // Instanciando o elevador
         Elevador elevador = Elevador.obterInstancia();
 
+        // Configurando a quantidade total de andares do prédio
+        elevador.setQuantidadeTotalAndares(10);
+
     }
 }

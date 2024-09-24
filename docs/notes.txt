@@ -8,3 +8,4 @@ Possíveis padrões para essa atividade:
 Possível adição: uma classe "painel"
     - o painel teria um conjunto de botões
     - um botão "fechar porta", um "abrir porta"e n botões "selecionar andar"
+    - um elevador deve ter a quantidade total de andares configurada

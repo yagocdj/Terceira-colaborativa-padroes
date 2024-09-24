@@ -2,6 +2,10 @@ package br.edu.ifpb.pps.botao;
 
 import br.edu.ifpb.pps.enumerations.Acao;
 
+/**
+ * Classe que representa um botão de um elevador.
+ * Esse botão pode estar dentro do elevador ou em um andar.
+ */
 public class Botao {
 
     private Acao acao;

@@ -1,14 +1,25 @@
 package br.edu.ifpb.pps.elevador;
 
+import br.edu.ifpb.pps.painel.PainelDeControle;
+
+/**
+ * Classe que representa o elevador
+ */
 public class Elevador {
 
-    private Integer andarAtual;
-    private Boolean portaAberta;
+    private int andarAtual;
+    private boolean portaAberta;
+    private int quantidadeTotalAndares;
+    
+    private PainelDeControle painelDeControle;
+
     private static Elevador instancia;
 
     private Elevador() {
         this.andarAtual = 0;
         this.portaAberta = true;
+        // não faz sentido um elevador sem um painel de controle
+        this.painelDeControle = new PainelDeControle();
     }
 
     /**
@@ -20,6 +31,30 @@ public class Elevador {
             instancia = new Elevador();
         }
         return instancia;
+    }
+
+    public void setQuantidadeTotalAndares(int quantidadeTotalAndares) {
+        this.quantidadeTotalAndares = quantidadeTotalAndares;
+    }
+
+    public int getQuantidadeTotalAndares() {
+        return quantidadeTotalAndares;
+    }
+
+    public void setPortaAberta(boolean portaAberta) {
+        this.portaAberta = portaAberta;
+    }
+
+    public boolean isPortaAberta() {
+        return portaAberta;
+    }
+
+    public void setAndarAtual(int andarAtual) {
+        this.andarAtual = andarAtual;
+    }
+
+    public int getAndarAtual() {
+        return andarAtual;
     }
 
 }

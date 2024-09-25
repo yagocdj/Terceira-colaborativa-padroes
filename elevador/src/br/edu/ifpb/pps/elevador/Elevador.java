@@ -1,5 +1,8 @@
 package br.edu.ifpb.pps.elevador;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import br.edu.ifpb.pps.painel.PainelDeControle;
 
 /**
@@ -10,6 +13,7 @@ public class Elevador {
     private int andarAtual;
     private boolean portaAberta;
     private int quantidadeTotalAndares;
+    private Queue<Integer> filaRequisicoes;
     
     private PainelDeControle painelDeControle;
 
@@ -18,8 +22,9 @@ public class Elevador {
     private Elevador() {
         this.andarAtual = 0;
         this.portaAberta = true;
-        // não faz sentido um elevador sem um painel de controle
+        // não faz sentido um elevador sem um painel de controle instanciado
         this.painelDeControle = new PainelDeControle();
+        this.filaRequisicoes = new LinkedList<>();
     }
 
     /**

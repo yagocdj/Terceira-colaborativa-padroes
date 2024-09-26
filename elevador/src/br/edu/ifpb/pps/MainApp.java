@@ -11,6 +11,8 @@ public class MainApp {
         // Configurando a quantidade total de andares do prédio
         elevador.setQuantidadeTotalAndares(10);
 
-        elevador.getPainelDeControle().chamarAndar(1);
+        elevador.getPainelDeControle().chamarAndar(5);
+    
+        elevador.mover();
     }
 }

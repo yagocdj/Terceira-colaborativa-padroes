@@ -4,6 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import br.edu.ifpb.pps.painel.PainelDeControle;
+import br.edu.ifpb.pps.state.ElevadorDescendo;
+import br.edu.ifpb.pps.state.ElevadorParado;
+import br.edu.ifpb.pps.state.ElevadorSubindo;
 import br.edu.ifpb.pps.state.EstadoElevador;
 import br.edu.ifpb.pps.state.EstadoEnum;
 
@@ -26,6 +29,7 @@ public class Elevador {
         this.andarAtual = 0;
         this.quantidadeTotalAndares = 9;
         this.portaAberta = true;
+        this.estado = new ElevadorParado(this);
 
         this.painelDeControle = new PainelDeControle(this);
         this.filaRequisicoes = new LinkedList<>();
@@ -48,6 +52,30 @@ public class Elevador {
     
     public void adicionarAndarNaFilaDeRequisicoes(int andar){
         filaRequisicoes.add(andar);
+    }
+
+    public void mover(){
+        System.out.println(filaRequisicoes);
+        if (filaRequisicoes.isEmpty()){
+            return;
+        }
+
+        int proximoAndar = filaRequisicoes.peek();
+
+        if (getAndarAtual() < proximoAndar) {
+            setEstado(new ElevadorSubindo(this));
+        } 
+        else if (getAndarAtual() > proximoAndar) {
+            setEstado(new ElevadorDescendo(this));
+        } 
+        else {
+            setEstado(new ElevadorParado(this));
+            filaRequisicoes.poll();
+        }
+    }
+
+    public int getAndarDestino(){
+        return filaRequisicoes.peek();
     }
 
     public void setQuantidadeTotalAndares(int quantidadeTotalAndares) {

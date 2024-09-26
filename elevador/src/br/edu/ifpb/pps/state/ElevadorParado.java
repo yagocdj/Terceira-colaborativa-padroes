@@ -6,6 +6,7 @@ public class ElevadorParado extends EstadoElevador {
 
     public ElevadorParado(Elevador elevador) {
         super(elevador);
+        System.out.println("!!! Elevador Parado !!!");
     }
 
     @Override

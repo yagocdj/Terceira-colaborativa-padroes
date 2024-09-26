@@ -6,17 +6,16 @@ public class ElevadorSubindo extends EstadoElevador {
 
     public ElevadorSubindo(Elevador elevador) {
         super(elevador);
+        System.out.println("!!! Elevador Subindo !!!");
+        subir();
     }
 
     @Override
     public void subir() {
 
-        elevador.setPortaAberta(false);
-        int andarDestinoAtual = elevador.getAndarAtual();
+        elevador.fecharPorta();
 
         while (elevador.getAndarAtual() < elevador.getAndarDestino()) {
-            // TODO - é necessário verificar se alguém chamou o elevador em um andar intermediário a cada andar que ele passa
-
             // considerando que o elevador está no 0, foi chamado no 8 e depois no 5.
 
             // Se o elevador chegar num andar de destino

@@ -26,12 +26,9 @@ public class Elevador {
     private static Elevador instancia;
 
     private Elevador() {
-        this.andarAtual = 0;
-        this.quantidadeTotalAndares = 9;
-        this.portaAberta = true;
+        this.andarAtual = 0;  // Térreo
+        this.portaAberta = true;  // A porta está aberta pois o elevador está parado
         this.estado = new ElevadorParado(this);
-
-        this.painelDeControle = new PainelDeControle(this);
         this.filaRequisicoes = new LinkedList<>();
     }
 
@@ -48,6 +45,10 @@ public class Elevador {
 
     public PainelDeControle getPainelDeControle(){
         return painelDeControle;
+    }
+
+    public void setPainelDeControle(PainelDeControle painelDeControle) {
+        this.painelDeControle = painelDeControle;
     }
     
     public void adicionarAndarNaFilaDeRequisicoes(int andar){

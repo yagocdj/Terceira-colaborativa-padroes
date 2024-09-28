@@ -1,6 +1,9 @@
 package br.edu.ifpb.pps.elevador;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -25,7 +28,6 @@ public class Elevador {
     private Queue<Integer> filaSubir;
     private Queue<Integer> filaDescer;
 
-    private Queue<Integer> filaRequisicoes;
     private PainelDeControle painelDeControle;
 
     private static Elevador instancia;
@@ -37,8 +39,6 @@ public class Elevador {
         this.filaSubir = new PriorityQueue<>();
         this.filaDescer = new PriorityQueue<>((a, b) -> b - a);
         
-        this.filaRequisicoes = new LinkedList<>();
-
         this.estado = new ElevadorParado(this);
     }
 
@@ -137,50 +137,6 @@ public class Elevador {
         } else {
             setEstado(new ElevadorParado(this));
         }
-    
-        // // Definir próximo andar com base no estado atual do elevador
-        // if (getEstado() == EstadoEnum.SUBINDO || (filaSubir.isEmpty() && !filaDescer.isEmpty())) {
-        //     // Caso o elevador esteja subindo ou não haja mais chamadas de subida e ele tenha que descer
-        //     moverParaProximoAndarSubida();
-        // } else if (getEstado() == EstadoEnum.DESCENDO || (filaDescer.isEmpty() && !filaSubir.isEmpty())) {
-        //     // Caso o elevador esteja descendo ou não haja mais chamadas de descida e ele tenha que subir
-        //     moverParaProximoAndarDescida();
-        // } else {
-        //     this.setEstado(new ElevadorParado(this));
-        // }
-    }
-    
-    private void moverParaProximoAndarSubida() {
-        if (!filaSubir.isEmpty()) {
-            int proximoAndar = filaSubir.peek();
-            
-            // Se o andar atual é menor, o elevador deve subir
-            if (getAndarAtual() < proximoAndar) {
-                setEstado(new ElevadorSubindo(this));  // Coloca o elevador no estado de subida
-            } else if (getAndarAtual() == proximoAndar) {
-                setEstado(new ElevadorParado(this));  // Se chegou ao andar desejado, para o elevador
-                filaSubir.poll();  // Remove a requisição atendida
-            }
-        }
-    }
-    
-    private void moverParaProximoAndarDescida() {
-        if (!filaDescer.isEmpty()) {
-            int proximoAndar = filaDescer.peek();
-    
-            // Se o andar atual é maior, o elevador deve descer
-            if (getAndarAtual() > proximoAndar) {
-                setEstado(new ElevadorDescendo(this));  // Coloca o elevador no estado de descida
-            } else if (getAndarAtual() == proximoAndar) {
-                setEstado(new ElevadorParado(this));  // Se chegou ao andar desejado, para o elevador
-                filaDescer.poll();  // Remove a requisição atendida
-            }
-        }
-    }
-    
-
-    public int getAndarDestino() {
-        return filaRequisicoes.peek();
     }
 
     public void setQuantidadeTotalAndares(int quantidadeTotalAndares) {
@@ -218,4 +174,22 @@ public class Elevador {
     public EstadoEnum getEstado() {
         return estado.getEstado();
     }
+
+    public void mostrarSituacao(){
+        List<Integer> combinada = new ArrayList<>();
+        combinada.addAll(filaSubir);
+        List<Integer> descidas = new ArrayList<>(filaDescer);
+        Collections.sort(descidas, Collections.reverseOrder());  // Ordena em ordem decrescente
+        combinada.addAll(descidas);
+
+        StringBuilder s = new StringBuilder();
+
+        s.append("+-----------------+\n");
+        s.append("| " + combinada + " |\n");
+        s.append("+-----------------+\n");
+        s.append("| " + estado.getEstado().toString() + "[" + getAndarAtual() + "]" + " |\n");
+        s.append("+-----------------+\n");
+        System.out.println(s);
+    }
+
 }

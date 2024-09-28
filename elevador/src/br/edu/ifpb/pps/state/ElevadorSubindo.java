@@ -6,7 +6,6 @@ public class ElevadorSubindo extends EstadoElevador {
 
     public ElevadorSubindo(Elevador elevador) {
         super(elevador);
-        System.out.println("!!! Elevador Subindo !!!");
         subir();
     }
 
@@ -21,7 +20,7 @@ public class ElevadorSubindo extends EstadoElevador {
             
             while (elevador.getAndarAtual() < proximoAndar) {
                 elevador.setAndarAtual(elevador.getAndarAtual() + 1);
-                System.out.println("Subindo para o andar " + elevador.getAndarAtual());
+                elevador.mostrarSituacao();
             }
             
             System.out.println("Parando para atender requisição no andar " + proximoAndar);

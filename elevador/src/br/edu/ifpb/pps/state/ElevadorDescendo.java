@@ -25,7 +25,7 @@ public class ElevadorDescendo extends EstadoElevador {
             
             while (elevador.getAndarAtual() > proximoAndar) {
                 elevador.setAndarAtual(elevador.getAndarAtual() - 1);
-                System.out.println("Descendo para o andar " + elevador.getAndarAtual());
+                elevador.mostrarSituacao();
             }
             
             System.out.println("Parando para atender requisição no andar " + proximoAndar);

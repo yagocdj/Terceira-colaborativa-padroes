@@ -41,8 +41,9 @@ public class MainApp {
         painelDeControle.chamarAndar(3);
         painelDeControle.chamarAndar(5);
 
-        botoesAndaresDescer.get(4).executarComando();
-
+        botoesAndaresSubir.get(4).executarComando();
+        botoesAndaresDescer.get(0).executarComando();
+        
         elevador.mover();
     }
 }

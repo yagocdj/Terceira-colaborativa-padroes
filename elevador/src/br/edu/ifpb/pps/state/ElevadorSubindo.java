@@ -15,19 +15,25 @@ public class ElevadorSubindo extends EstadoElevador {
 
         elevador.fecharPorta();
 
-        while (elevador.getAndarAtual() < elevador.getAndarDestino()) {
-            // considerando que o elevador está no 0, foi chamado no 8 e depois no 5.
-
-            // Se o elevador chegar num andar de destino
-            // Ele vai pro Estado Parado
-            // Abre a porta
-            // E dentro do Estado parado ele verifica se ainda tem requisiçoes
-            // Se tiver, ele vai ter que decidir se continua subindo ou desce
-
-            elevador.setAndarAtual(elevador.getAndarAtual() + 1);
-            System.out.println("Subindo para o andar " + elevador.getAndarAtual());
+        // Atende as requisições na fila de subida
+        while (!elevador.getFilaSubida().isEmpty()) {
+            int proximoAndar = elevador.getFilaSubida().poll(); // Próxima requisição de subida
+            
+            while (elevador.getAndarAtual() < proximoAndar) {
+                elevador.setAndarAtual(elevador.getAndarAtual() + 1);
+                System.out.println("Subindo para o andar " + elevador.getAndarAtual());
+            }
+            
+            System.out.println("Parando para atender requisição no andar " + proximoAndar);
+            elevador.setEstado(new ElevadorParado(elevador));
+            elevador.abrirPorta();
+            // Aqui ele atenderia o passageiro (abrir portas, etc.)
         }
-        elevador.setEstado(new ElevadorParado(elevador));
+
+        // Após atender todas as requisições de subida, verificar se há descida
+        if (!elevador.getFilaDescida().isEmpty()) {
+            elevador.setEstado(new ElevadorDescendo(elevador));
+        }
     }
 
     @Override

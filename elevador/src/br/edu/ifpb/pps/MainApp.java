@@ -15,7 +15,7 @@ public class MainApp {
         elevador.setPainelDeControle(painelDeControle);
 
         // Chamando o elevador para o andar 5
-        elevador.getPainelDeControle().chamarAndar(5);
+        painelDeControle.chamarAndar(5);
         elevador.mover();
     }
 }

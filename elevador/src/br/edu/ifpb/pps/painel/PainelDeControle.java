@@ -5,7 +5,9 @@ import java.util.List;
 
 import br.edu.ifpb.pps.botao.Botao;
 import br.edu.ifpb.pps.comando.Comando;
+import br.edu.ifpb.pps.comando.ComandoAbrirPorta;
 import br.edu.ifpb.pps.comando.ComandoChamarAndar;
+import br.edu.ifpb.pps.comando.ComandoFecharPorta;
 import br.edu.ifpb.pps.elevador.Elevador;
 import br.edu.ifpb.pps.enumerations.Acao;
 
@@ -14,15 +16,19 @@ import br.edu.ifpb.pps.enumerations.Acao;
  */
 public class PainelDeControle {
 
-    // private Elevador elevador;
     private Botao botaoAbrirPorta;
     private Botao botaoFecharPorta;
     private List<Botao> botoesAndares;
 
     public PainelDeControle(Elevador elevador) {
-        // this.elevador = elevador;
+        // criando o botão para abrir a porta
         this.botaoAbrirPorta = new Botao(Acao.ABRIR_PORTA.toString());
+        this.botaoAbrirPorta.setComando(new ComandoAbrirPorta(elevador));
+
+        // criando o botão para fechar a porta
         this.botaoFecharPorta = new Botao(Acao.FECHAR_PORTA.toString());
+        this.botaoFecharPorta.setComando(new ComandoFecharPorta(elevador));
+
         this.botoesAndares = new ArrayList<>();
     
         // criar os botões para cada andar

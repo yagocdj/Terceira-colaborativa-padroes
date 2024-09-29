@@ -6,32 +6,34 @@ public class ElevadorSubindo extends EstadoElevador {
 
     public ElevadorSubindo(Elevador elevador) {
         super(elevador);
-        subir();
     }
 
     @Override
     public void subir() {
-
         elevador.fecharPorta();
 
-        // Atende as requisições na fila de subida
         while (!elevador.getFilaSubida().isEmpty()) {
-            int proximoAndar = elevador.getFilaSubida().poll(); // Próxima requisição de subida
-            
+            int proximoAndar = elevador.getFilaSubida().poll();
+
             while (elevador.getAndarAtual() < proximoAndar) {
-                elevador.setAndarAtual(elevador.getAndarAtual() + 1);
-                elevador.mostrarSituacao();
+                try {
+                    elevador.setAndarAtual(elevador.getAndarAtual() + 1);
+                    elevador.mostrarSituacao();
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             
-            System.out.println("Parando para atender requisição no andar " + proximoAndar);
+            System.out.println("|--- Parando para atender requisição no " + proximoAndar + "° andar ---|\n");
             elevador.setEstado(new ElevadorParado(elevador));
-            elevador.abrirPorta();
-            // Aqui ele atenderia o passageiro (abrir portas, etc.)
+            elevador.getEstado().parar();
         }
 
         // Após atender todas as requisições de subida, verificar se há descida
         if (!elevador.getFilaDescida().isEmpty()) {
             elevador.setEstado(new ElevadorDescendo(elevador));
+            elevador.getEstado().descer();
         }
     }
 
@@ -49,5 +51,5 @@ public class ElevadorSubindo extends EstadoElevador {
     public EstadoEnum getEstado() {
         return EstadoEnum.SUBINDO;
     }
-    
+
 }

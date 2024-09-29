@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifpb.pps.botao.Botao;
-import br.edu.ifpb.pps.comando.Comando;
-import br.edu.ifpb.pps.comando.ComandoChamarAndar;
 import br.edu.ifpb.pps.comando.ComandoChamarAndarDescendo;
 import br.edu.ifpb.pps.comando.ComandoChamarAndarSubindo;
 import br.edu.ifpb.pps.elevador.Elevador;
@@ -38,12 +36,10 @@ public class MainApp {
         }
 
         // Chamando o elevador para o andar 5
-        painelDeControle.chamarAndar(3);
-        painelDeControle.chamarAndar(5);
-
+        painelDeControle.chamarAndar(2);
+        painelDeControle.chamarAndar(6);
         botoesAndaresSubir.get(4).executarComando();
-        botoesAndaresDescer.get(0).executarComando();
-        
+        botoesAndaresDescer.get(1).executarComando();
         elevador.mover();
     }
 }

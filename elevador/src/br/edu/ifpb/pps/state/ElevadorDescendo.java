@@ -6,8 +6,6 @@ public class ElevadorDescendo extends EstadoElevador {
 
     public ElevadorDescendo(Elevador elevador) {
         super(elevador);
-        System.out.println("!!! Elevador Descendo !!!");
-        descer();
     }
 
     @Override
@@ -24,19 +22,24 @@ public class ElevadorDescendo extends EstadoElevador {
             int proximoAndar = elevador.getFilaDescida().poll(); // Próxima requisição de descida
             
             while (elevador.getAndarAtual() > proximoAndar) {
-                elevador.setAndarAtual(elevador.getAndarAtual() - 1);
-                elevador.mostrarSituacao();
+                try {
+                    elevador.setAndarAtual(elevador.getAndarAtual() - 1);
+                    elevador.mostrarSituacao();
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             
-            System.out.println("Parando para atender requisição no andar " + proximoAndar);
+            System.out.println("|--- Parando para atender requisição no " + proximoAndar + "° andar ---|\n");
             elevador.setEstado(new ElevadorParado(elevador));
-            elevador.abrirPorta();
-            // Aqui ele atenderia o passageiro (abrir portas, etc.)
+            elevador.getEstado().parar();
         }
 
         // Após atender todas as requisições de descida, verificar se há subida
         if (!elevador.getFilaSubida().isEmpty()) {
             elevador.setEstado(new ElevadorSubindo(elevador));
+            elevador.getEstado().subir();
         } 
     };
 

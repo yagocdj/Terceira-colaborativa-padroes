@@ -29,9 +29,11 @@ public class ElevadorParado extends EstadoElevador {
         }
 
         if (!elevador.getFilaSubida().isEmpty()) {
-            elevador.setEstado(new ElevadorSubindo(elevador));        
+            elevador.setEstado(new ElevadorSubindo(elevador));
+            elevador.getEstado().subir();
         } else if (!elevador.getFilaDescida().isEmpty()) {
             elevador.setEstado(new ElevadorDescendo(elevador));
+            elevador.getEstado().descer();
         } else {
             elevador.mostrarSituacao();
         }

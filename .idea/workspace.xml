@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37fc93a2-3c06-46fc-80f9-fbc2ac0688c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/comando/ComandoAbrirPorta.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/comando/ComandoAbrirPorta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/comando/ComandoFecharPorta.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/comando/ComandoFecharPorta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/elevador/Elevador.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/elevador/Elevador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/painel/PainelDeControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/painel/PainelDeControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/ElevadorDescendo.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/ElevadorDescendo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/ElevadorParado.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/ElevadorParado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/ElevadorSubindo.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/ElevadorSubindo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/EstadoElevador.java" beforeDir="false" afterPath="$PROJECT_DIR$/elevador/src/br/edu/ifpb/pps/state/EstadoElevador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,25 +24,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MainApp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "padroes-yago",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "proofread",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MainApp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;padroes-yago&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yago_\Development\padroes_de_projeto\Terceira-colaborativa-padroes\docs" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,7 +66,8 @@
       <updated>1727197757676</updated>
       <workItem from="1727197760156" duration="8000" />
       <workItem from="1727668746259" duration="899000" />
-      <workItem from="1727658867712" duration="1650000" />
+      <workItem from="1727658867712" duration="3933000" />
+      <workItem from="1727662961881" duration="690000" />
     </task>
     <servers />
   </component>

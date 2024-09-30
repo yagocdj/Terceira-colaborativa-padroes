@@ -16,9 +16,9 @@ import br.edu.ifpb.pps.enumerations.Acao;
  */
 public class PainelDeControle {
 
-    private Botao botaoAbrirPorta;
-    private Botao botaoFecharPorta;
-    private List<Botao> botoesAndares;
+    private final Botao botaoAbrirPorta;
+    private final Botao botaoFecharPorta;
+    private final List<Botao> botoesAndares;
 
     public PainelDeControle(Elevador elevador) {
         // criando o botão para abrir a porta

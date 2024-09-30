@@ -13,7 +13,7 @@ public abstract class EstadoElevador {
     }
 
 
-    public abstract EstadoEnum getEstado();
+    public abstract EstadoEnum getEstadoEnum();
     public abstract void subir();
     public abstract void descer();
     public abstract void parar();

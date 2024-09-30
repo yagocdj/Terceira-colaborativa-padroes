@@ -13,7 +13,7 @@ public class ComandoFecharPorta implements Comando {
 
     @Override
     public void executar() {
-        if (elevador.getEstado() == EstadoEnum.PARADO) {
+        if (elevador.getEstado().getEstadoEnum() == EstadoEnum.PARADO) {
             elevador.fecharPorta();
         }
     }

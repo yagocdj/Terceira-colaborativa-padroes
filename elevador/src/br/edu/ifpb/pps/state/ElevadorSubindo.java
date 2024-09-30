@@ -48,7 +48,7 @@ public class ElevadorSubindo extends EstadoElevador {
     }
 
     @Override
-    public EstadoEnum getEstado() {
+    public EstadoEnum getEstadoEnum() {
         return EstadoEnum.SUBINDO;
     }
 

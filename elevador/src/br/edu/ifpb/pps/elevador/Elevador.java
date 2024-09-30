@@ -11,7 +11,6 @@ import br.edu.ifpb.pps.state.ElevadorDescendo;
 import br.edu.ifpb.pps.state.ElevadorParado;
 import br.edu.ifpb.pps.state.ElevadorSubindo;
 import br.edu.ifpb.pps.state.EstadoElevador;
-import br.edu.ifpb.pps.state.EstadoEnum;
 
 /**
  * Classe que representa o elevador
@@ -157,7 +156,7 @@ public class Elevador {
         s.append("+-----------------+\n");
         s.append("| " + combinada + " |\n");
         s.append("+-----------------+\n");
-        s.append("| " + estado.getEstado().toString() + "[" + getAndarAtual() + "]" + " |\n");
+        s.append("| " + estado.getEstadoEnum().toString() + "[" + getAndarAtual() + "]" + " |\n");
         s.append("+-----------------+\n");
         System.out.println(s);
     }

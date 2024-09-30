@@ -7,7 +7,7 @@ Repositório da terceira atividade colaborativa da disciplina de Padrões de Pro
 ### 1. Command
 
 #### Justificativa
-O padrão Command foi utilizado para encapsular todas as operações que o elevador pode realizar, como subir, descer, abrir e fechar portas. Isso permite que as solicitações sejam parametrizadas e tratadas de forma uniforme, facilitando a implementação de funcionalidades como desfazer operações e registrar logs de ações.
+O padrão Command foi utilizado para encapsular todas as operações que o elevador pode realizar, como subir, descer, abrir porta, fechar porta e chamar elevador. Isso permite que as solicitações sejam parametrizadas e tratadas de forma uniforme, facilitando a implementação de funcionalidades como desfazer operações e registrar logs de ações.
 
 ### 2. Singleton
 
